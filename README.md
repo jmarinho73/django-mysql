@@ -1,6 +1,6 @@
 ### Aplicación feita con Django para Docker Compose conectada a unha base de datos MySQL.
 
-Se simplemente queremos executar esta aplicación en Docker Compose bastaría con clonar o repositorio, ir ao directorio principal, crear un ficheiro .env como o que hai ao final deste documento ou cos valores que se estimen oportunos e exectuar `docker compose up`. Só con iso o escenario debería funcionar. Se se quere recrear bastaría con seguir os seguintes pasos:
+Se simplemente queremos executar esta aplicación en Docker Compose bastaría con clonar o repositorio, ir ao directorio principal, crear un ficheiro .env como o que hai ao final deste documento ou cos valores que se estimen oportunos e exectuar `sudo docker compose up`. Só con iso o escenario debería funcionar. Se se quere recrear bastaría con seguir os seguintes pasos:
 
 1. Primeiro creamos un directorio cun nome calquera que poidamos lembrar.
 
@@ -16,7 +16,7 @@ gunicorn>=20.1
 
 4. Crear un ficheiro docker.compose.yml como o que figura neste repositiorio. Aquí descríbense os servizos que precisa a aplicación. Neste caso serían o servidor web onde se aloxa e a base de datos. Tamén se describen as imaxes que se usan como se conectan, os volumes que poden precisar, as redireccións de portos entre o container e o host e que porto de ese último se abre para a conexión coa web app. O porto da esquerda é o do host e o da dereita o do container.
 
-5. Agora vamos crear un proxecto de Django baleiro. Antes diso vamos crear un directorio dentro do directorio principal onde se gardará o código fonte da aplicación e o ficheiro requirements.txt para que poidan ser usados máis tarde ao exectuar o Dockerfile para crear a imaxe que servirá de base ao contedor da aplicación web:
+5. Agora vamos crear un proxecto de Django baleiro. Antes diso vamos crear un subdirectorio dentro do directorio principal onde se gardará o código fonte da aplicación e o ficheiro requirements.txt para que poidan ser usados máis tarde ao exectuar o Dockerfile para crear a imaxe que servirá de base ao contedor da aplicación web:
 
 ```
 $ mkdir app
@@ -32,7 +32,7 @@ $ cd app
 $ sudo docker compose run web django-admin startproject proxecto ./app
 ```
 
-O que fai este comamdo e dicirlle a docker compose que execute o comando django-admin startproject para crear un proxecto de Django chamado** proxecto** no directorio app que acabamos de crear.
+O que fai este comamdo e dicirlle a docker compose que execute o comando django-admin startproject para crear un proxecto de Django chamado **proxecto** no directorio app que acabamos de crear.
 
 6. Despois de completar o comando, aparecerá no directorio principal, xunto a o ficheiro docker-compose.yml, o Dockerfile e, no seu caso o ficheiro .env, un novo cartafol para o contedor da base de datos chamado db e, dentro do directorio app un ficheiro chamado manage.py e un directorio chamado co nome que lle demos ao proxecto no comando anterior, no noso caso **proxecto**.
 O problema aquí é que, en Linux hai que cambiarlle os permisos ao cartafol do proxecto e a o ficheiro manage.py para que o usuario que teñamos nese equipo poida traballar con eles sen problemas:
