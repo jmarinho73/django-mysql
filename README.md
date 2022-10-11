@@ -1,5 +1,7 @@
 ### Aplicación feita con Django para Docker Compose conectada a unha base de datos MySQL.
 
+Se simplemente queremos executar esta aplicación en Docker Compose bastaría con clonar o repositorio, ir ao directorio principal, crear un ficheiro .env como o que hai ao final deste documento ou cos valores que se estimen oportunos e exectuar `docker compose up`. Só con iso o escenario debería funcionar. Se se quere recrear bastaría con seguir os seguintes pasos:
+
 1. Primeiro creamos un directorio cun nome calquera que poidamos lembrar.
 
 2. Despois creamos un ficheiro Dockerfile tal e como o que figura neste repositorio.
