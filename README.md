@@ -10,7 +10,7 @@ Se simplemente queremos executar esta aplicación en Docker Compose bastaría co
 
   ` $ cd django-mysql`
 
-* Crear un ficheiro .env como o que hai ao final deste documento ou cos valores que se estimen oportunos. 
+* Crear un ficheiro .env como o que hai ao final deste documento (punto 8) ou cos valores que se estimen oportunos. 
 
 * E exectuar `sudo docker compose up`.
 
@@ -76,9 +76,8 @@ DATABASES = {
     }
 } 
 ```
-8. Unha vez feito todo iso e tendo os ficheiros o mesmo contido que os que figuran neste repositorio, ou convenientemente adaptados ao teu escenario, só queda executar un `$ sudo docker compose up` para poñer en marcha a aplicación.
 
-9. Neste escenario faltaría un ficheiro .env situado no mesmo directorio que o ficheiro docker-compose.yml no que se definan as variábeis precisas para este escenario. Por exemplo as que definan o password do usuario root da base de datos, o usuario e o password da aplicación web, e a base de datos por defecto. Tamén unha variábel que defina os hosts que teñen permitido acceder á aplicación xa que, nalgúns casos, pode dar un erro derivado de que o host que aparece na cabeceira da petición non está autorizado a acceder. Un posíbel contido pode ser o seguinte:
+8. Neste escenario faltaría un ficheiro .env situado no mesmo directorio que o ficheiro docker-compose.yml no que se definan as variábeis precisas para este escenario. Por exemplo as que definan o password do usuario root da base de datos, o usuario e o password da aplicación web, e a base de datos por defecto. Tamén unha variábel que defina os hosts que teñen permitido acceder á aplicación xa que, nalgúns casos, pode dar un erro derivado de que o host que aparece na cabeceira da petición non está autorizado a acceder. Un posíbel contido pode ser o seguinte:
 
 ```
 MYSQL_USER=web
@@ -88,3 +87,4 @@ MYSQL_DATABASE=web
 ALLOWED_HOSTS=localhost
 ```
  
+9. Unha vez feito todo iso e tendo os ficheiros o mesmo contido que os que figuran neste repositorio, ou convenientemente adaptados ao teu escenario, só queda executar un `$ sudo docker compose up` para poñer en marcha a aplicación.
