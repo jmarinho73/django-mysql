@@ -88,3 +88,5 @@ ALLOWED_HOSTS=localhost
 ```
  
 9. Unha vez feito todo iso e tendo os ficheiros o mesmo contido que os que figuran neste repositorio, ou convenientemente adaptados ao teu escenario, só queda executar un `$ sudo docker compose up` para poñer en marcha a aplicación.
+
+Finalmente dicir que este titorial está baseado [neste outro] (https://docs.docker.com/samples/django/?utm_source=pocket_mylist#create-a-django-project) con algunha adaptación, como que o contedor da base de datos está baseado en MySQL no canto de PostgreSQL e que se instalou o servidor web Gunicorn en lugar de usar o que trae Django integrado.
