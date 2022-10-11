@@ -14,7 +14,7 @@ Se simplemente queremos executar esta aplicación en Docker Compose bastaría co
 
 * E exectuar `sudo docker compose up`.
 
-* Despois poderemos acceder á aplicación a través do navegador no enderezo [http://localhost:8000] 
+* Despois poderemos acceder á aplicación a través do navegador no enderezo <http://localhost:8000> 
 
 Só con iso o escenario debería funcionar. Se se quere recrear desde o inicio, sen usar os ficheiros deste repositorio, bastaría con seguir os seguintes pasos:
 
