@@ -10,7 +10,7 @@ Se simplemente queremos executar esta aplicación en Docker Compose bastaría co
 
   ` $ cd django-mysql`
 
-* Crear un ficheiro .env como o que hai ao final deste documento (punto 8) ou cos valores que se estimen oportunos. 
+* Crear nese directorio un ficheiro .env como o que hai ao final deste documento (punto 8) ou cos valores que se estimen oportunos. 
 
 * E exectuar `sudo docker compose up`.
 
