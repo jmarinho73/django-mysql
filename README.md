@@ -58,12 +58,14 @@ O problema aquí é que, en Linux hai que cambiarlle os permisos ao cartafol do 
 $ sudo chown -R $USER:$USER ./app
 ```
 
-7. Só queda conectar a aplicación coa base de datos. Para iso, hai que ir a un ficheiro que está dentro do cartafol do proxecto. Neste escenario estaría dentro de `./app/proxecto/settings.py`. Nese ficheiro hai que comprobar que se importa o módulo os (`import os` ao principio do ficheiro) e despois máis abaixo na sección `DATABASE` comprobar que o contido sexa como o que se mostra:
+7. Só queda conectar a aplicación coa base de datos. Para iso, hai que ir a un ficheiro que está dentro do cartafol do proxecto. Neste escenario estaría dentro de `./app/proxecto/settings.py`. Nese ficheiro hai que comprobar que se importa o módulo os (`import os` ao principio do ficheiro) e despois máis abaixo nas seccións `ALLOWED_HOSTS` e `DATABASE` comprobar que o contido sexa como o que se mostra:
 
 ```
 import os # Hai que comprobar que figure ao inicio do ficheiro para que funcionen as funcións os.environ.get de máis abaixo
 
 ####################
+
+ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")  # Para que colla o valor da variábel DJANGO_ALLOWED_HOSTS do ficheiro .env do apartado 8.
 
 DATABASES = {
     'default': {
@@ -84,6 +86,7 @@ MYSQL_USER=web
 MYSQL_PASSWORD=abc123.
 MYSQL_ROOT_PASSWORD=abc123.
 MYSQL_DATABASE=web
+DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
 ```
  
 9. Unha vez feito todo iso e tendo os ficheiros o mesmo contido que os que figuran neste repositorio, ou convenientemente adaptados ao teu escenario, só queda executar un `$ sudo docker compose up` para poñer en marcha a aplicación.
