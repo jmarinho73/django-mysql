@@ -84,7 +84,7 @@ MYSQL_USER=web
 MYSQL_PASSWORD=abc123.
 MYSQL_ROOT_PASSWORD=abc123.
 MYSQL_DATABASE=web
-ALLOWED_HOSTS=localhost
+DJANGO_ALLOWED_HOSTS=localhost
 ```
  
 9. Unha vez feito todo iso e tendo os ficheiros o mesmo contido que os que figuran neste repositorio, ou convenientemente adaptados ao teu escenario, só queda executar un `$ sudo docker compose up` para poñer en marcha a aplicación.
